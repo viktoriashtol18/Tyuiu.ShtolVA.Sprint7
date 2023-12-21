@@ -15,7 +15,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2.Test
             bool res = info.Exists;
             bool wait = true;
             Assert.AreEqual(wait, res);
-            {
+            
         }
     }
 }
