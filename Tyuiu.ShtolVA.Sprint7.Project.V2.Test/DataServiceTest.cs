@@ -8,8 +8,14 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidGetDataFromFile()
         {
+            string path = @"C:\Users\vikto\source\repos\Tyuiu.ShtolVA.Sprint7\Tyuiu.ShtolVA.Sprint7.Project.V2.Test\bin\Debug\InPutFileProjectV2.csv";
+            FileInfo info = new FileInfo(path);
+            bool res = info.Exists;
+            bool wait = true;
+            Assert.AreEqual(wait, res);
+            {
         }
     }
 }
