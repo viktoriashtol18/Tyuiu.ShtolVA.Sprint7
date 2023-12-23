@@ -107,7 +107,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             // 
             // buttonProgramm_SVA
             // 
-            this.buttonProgramm_SVA.Location = new System.Drawing.Point(367, 12);
+            this.buttonProgramm_SVA.Location = new System.Drawing.Point(367, 13);
             this.buttonProgramm_SVA.Name = "buttonProgramm_SVA";
             this.buttonProgramm_SVA.Size = new System.Drawing.Size(119, 28);
             this.buttonProgramm_SVA.TabIndex = 3;
