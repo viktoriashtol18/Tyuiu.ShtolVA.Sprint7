@@ -21,5 +21,10 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
         {
             this.Close();
         }
+
+        private void FormGuide_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

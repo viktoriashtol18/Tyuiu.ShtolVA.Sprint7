@@ -31,11 +31,14 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
         {
             this.components = new System.ComponentModel.Container();
             this.panel_SVA = new System.Windows.Forms.Panel();
+            this.buttonSave_SVA = new System.Windows.Forms.Button();
             this.textBoxPoisk_SVA = new System.Windows.Forms.TextBox();
             this.labelPoisk_SVA = new System.Windows.Forms.Label();
             this.groupBoxFilter_SVA = new System.Windows.Forms.GroupBox();
+            this.textBoxFilter_SVA = new System.Windows.Forms.TextBox();
             this.buttonDeletFilter_SVA = new System.Windows.Forms.Button();
             this.groupBoxSort_SVA = new System.Windows.Forms.GroupBox();
+            this.comboBoxSort_SVA = new System.Windows.Forms.ComboBox();
             this.buttonDeletSort_SVA = new System.Windows.Forms.Button();
             this.dataGridViewOpenFile_SVA = new System.Windows.Forms.DataGridView();
             this.buttonProgramm_SVA = new System.Windows.Forms.Button();
@@ -58,7 +61,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.labelKolvo_SVA = new System.Windows.Forms.Label();
             this.toolTipProjectV2_SVA = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialogProjectV2_SVA = new System.Windows.Forms.OpenFileDialog();
-            this.buttonSave_SVA = new System.Windows.Forms.Button();
             this.panel_SVA.SuspendLayout();
             this.groupBoxFilter_SVA.SuspendLayout();
             this.groupBoxSort_SVA.SuspendLayout();
@@ -86,6 +88,18 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.panel_SVA.Size = new System.Drawing.Size(1256, 705);
             this.panel_SVA.TabIndex = 0;
             // 
+            // buttonSave_SVA
+            // 
+            this.buttonSave_SVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave_SVA.BackColor = System.Drawing.Color.Snow;
+            this.buttonSave_SVA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave_SVA.Location = new System.Drawing.Point(1124, 10);
+            this.buttonSave_SVA.Name = "buttonSave_SVA";
+            this.buttonSave_SVA.Size = new System.Drawing.Size(101, 30);
+            this.buttonSave_SVA.TabIndex = 9;
+            this.buttonSave_SVA.Text = "Сохранить";
+            this.buttonSave_SVA.UseVisualStyleBackColor = false;
+            // 
             // textBoxPoisk_SVA
             // 
             this.textBoxPoisk_SVA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -97,6 +111,8 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.textBoxPoisk_SVA.Size = new System.Drawing.Size(842, 22);
             this.textBoxPoisk_SVA.TabIndex = 8;
             this.textBoxPoisk_SVA.TextChanged += new System.EventHandler(this.textBoxPoisk_SVA_TextChanged);
+            this.textBoxPoisk_SVA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPoisk_SVA_KeyDown);
+            this.textBoxPoisk_SVA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxPoisk_SVA_KeyUp);
             // 
             // labelPoisk_SVA
             // 
@@ -112,6 +128,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             // 
             this.groupBoxFilter_SVA.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.groupBoxFilter_SVA.BackColor = System.Drawing.Color.MistyRose;
+            this.groupBoxFilter_SVA.Controls.Add(this.textBoxFilter_SVA);
             this.groupBoxFilter_SVA.Controls.Add(this.buttonDeletFilter_SVA);
             this.groupBoxFilter_SVA.Location = new System.Drawing.Point(940, 313);
             this.groupBoxFilter_SVA.Name = "groupBoxFilter_SVA";
@@ -119,6 +136,13 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.groupBoxFilter_SVA.TabIndex = 6;
             this.groupBoxFilter_SVA.TabStop = false;
             this.groupBoxFilter_SVA.Text = "Фильтрация";
+            // 
+            // textBoxFilter_SVA
+            // 
+            this.textBoxFilter_SVA.Location = new System.Drawing.Point(6, 30);
+            this.textBoxFilter_SVA.Name = "textBoxFilter_SVA";
+            this.textBoxFilter_SVA.Size = new System.Drawing.Size(273, 22);
+            this.textBoxFilter_SVA.TabIndex = 1;
             // 
             // buttonDeletFilter_SVA
             // 
@@ -134,6 +158,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             // 
             this.groupBoxSort_SVA.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.groupBoxSort_SVA.BackColor = System.Drawing.Color.MistyRose;
+            this.groupBoxSort_SVA.Controls.Add(this.comboBoxSort_SVA);
             this.groupBoxSort_SVA.Controls.Add(this.buttonDeletSort_SVA);
             this.groupBoxSort_SVA.Location = new System.Drawing.Point(940, 99);
             this.groupBoxSort_SVA.Name = "groupBoxSort_SVA";
@@ -141,6 +166,16 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.groupBoxSort_SVA.TabIndex = 5;
             this.groupBoxSort_SVA.TabStop = false;
             this.groupBoxSort_SVA.Text = "Сортировка";
+            // 
+            // comboBoxSort_SVA
+            // 
+            this.comboBoxSort_SVA.FormattingEnabled = true;
+            this.comboBoxSort_SVA.Location = new System.Drawing.Point(6, 32);
+            this.comboBoxSort_SVA.Name = "comboBoxSort_SVA";
+            this.comboBoxSort_SVA.Size = new System.Drawing.Size(273, 24);
+            this.comboBoxSort_SVA.TabIndex = 1;
+            this.comboBoxSort_SVA.SelectedIndexChanged += new System.EventHandler(this.comboBoxSort_SVA_SelectedIndexChanged);
+            this.comboBoxSort_SVA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBoxSort_SVA_KeyDown);
             // 
             // buttonDeletSort_SVA
             // 
@@ -152,6 +187,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.buttonDeletSort_SVA.TabIndex = 0;
             this.buttonDeletSort_SVA.Text = "Убрать сортировку";
             this.buttonDeletSort_SVA.UseVisualStyleBackColor = false;
+            this.buttonDeletSort_SVA.Click += new System.EventHandler(this.buttonDeletSort_SVA_Click);
             // 
             // dataGridViewOpenFile_SVA
             // 
@@ -179,6 +215,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.toolTipProjectV2_SVA.SetToolTip(this.buttonProgramm_SVA, "Открыть информацию о разработчике");
             this.buttonProgramm_SVA.UseVisualStyleBackColor = false;
             this.buttonProgramm_SVA.Click += new System.EventHandler(this.buttonProgramm_SVA_Click);
+            this.buttonProgramm_SVA.MouseEnter += new System.EventHandler(this.buttonProgramm_SVA_MouseEnter);
             // 
             // buttonQuickGuide_SVA
             // 
@@ -192,6 +229,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.toolTipProjectV2_SVA.SetToolTip(this.buttonQuickGuide_SVA, "Открыть руководство пользователя");
             this.buttonQuickGuide_SVA.UseVisualStyleBackColor = false;
             this.buttonQuickGuide_SVA.Click += new System.EventHandler(this.buttonQuickGuide_SVA_Click);
+            this.buttonQuickGuide_SVA.MouseEnter += new System.EventHandler(this.buttonQuickGuide_SVA_MouseEnter);
             // 
             // buttonGraf_SVA
             // 
@@ -205,6 +243,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.toolTipProjectV2_SVA.SetToolTip(this.buttonGraf_SVA, "Открыть график");
             this.buttonGraf_SVA.UseVisualStyleBackColor = false;
             this.buttonGraf_SVA.Click += new System.EventHandler(this.buttonGraf_SVA_Click);
+            this.buttonGraf_SVA.MouseEnter += new System.EventHandler(this.buttonGraF_SVA_MouseEnter);
             // 
             // buttonFile_SVA
             // 
@@ -218,6 +257,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.toolTipProjectV2_SVA.SetToolTip(this.buttonFile_SVA, "Открыть файл");
             this.buttonFile_SVA.UseVisualStyleBackColor = false;
             this.buttonFile_SVA.Click += new System.EventHandler(this.buttonFile_SVA_Click);
+            this.buttonFile_SVA.MouseEnter += new System.EventHandler(this.buttonGraF_SVA_MouseEnter);
             // 
             // panelBottom_SVA
             // 
@@ -234,7 +274,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             // buttonDelete_SVA
             // 
             this.buttonDelete_SVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDelete_SVA.BackColor = System.Drawing.Color.Snow;
+            this.buttonDelete_SVA.BackColor = System.Drawing.Color.RosyBrown;
             this.buttonDelete_SVA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDelete_SVA.Location = new System.Drawing.Point(1018, 99);
             this.buttonDelete_SVA.Name = "buttonDelete_SVA";
@@ -242,6 +282,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.buttonDelete_SVA.TabIndex = 2;
             this.buttonDelete_SVA.Text = "Удалить";
             this.buttonDelete_SVA.UseVisualStyleBackColor = false;
+            this.buttonDelete_SVA.Click += new System.EventHandler(this.buttonDelete_SVA_Click);
             // 
             // buttonAddition_SVA
             // 
@@ -316,6 +357,8 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.textBoxKolvo_SVA.Name = "textBoxKolvo_SVA";
             this.textBoxKolvo_SVA.Size = new System.Drawing.Size(96, 22);
             this.textBoxKolvo_SVA.TabIndex = 5;
+            this.textBoxKolvo_SVA.TextChanged += new System.EventHandler(this.textBoxKolvo_SVA_TextChanged);
+            this.textBoxKolvo_SVA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxKolvo_SVA_KeyUp);
             // 
             // labelMax_SVA
             // 
@@ -379,18 +422,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             // 
             this.openFileDialogProjectV2_SVA.FileName = "openFileDialog1";
             // 
-            // buttonSave_SVA
-            // 
-            this.buttonSave_SVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave_SVA.BackColor = System.Drawing.Color.Snow;
-            this.buttonSave_SVA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSave_SVA.Location = new System.Drawing.Point(1124, 10);
-            this.buttonSave_SVA.Name = "buttonSave_SVA";
-            this.buttonSave_SVA.Size = new System.Drawing.Size(101, 30);
-            this.buttonSave_SVA.TabIndex = 9;
-            this.buttonSave_SVA.Text = "Сохранить";
-            this.buttonSave_SVA.UseVisualStyleBackColor = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -406,6 +437,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.panel_SVA.ResumeLayout(false);
             this.panel_SVA.PerformLayout();
             this.groupBoxFilter_SVA.ResumeLayout(false);
+            this.groupBoxFilter_SVA.PerformLayout();
             this.groupBoxSort_SVA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOpenFile_SVA)).EndInit();
             this.panelBottom_SVA.ResumeLayout(false);
@@ -446,6 +478,8 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
         private System.Windows.Forms.ToolTip toolTipProjectV2_SVA;
         private System.Windows.Forms.OpenFileDialog openFileDialogProjectV2_SVA;
         private System.Windows.Forms.Button buttonSave_SVA;
+        private System.Windows.Forms.ComboBox comboBoxSort_SVA;
+        private System.Windows.Forms.TextBox textBoxFilter_SVA;
     }
 }
 

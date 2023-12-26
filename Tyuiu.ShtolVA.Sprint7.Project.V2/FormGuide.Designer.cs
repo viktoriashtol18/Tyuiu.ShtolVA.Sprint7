@@ -83,6 +83,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.Name = "FormGuide";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Краткое руководство";
+            this.Load += new System.EventHandler(this.FormGuide_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,5 +16,15 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCharts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
