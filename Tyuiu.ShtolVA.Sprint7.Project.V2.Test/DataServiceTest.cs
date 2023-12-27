@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Tyuiu.ShtolVA.Sprint7.Project.V2.Lib;
+using System.IO;
+
 
 namespace Tyuiu.ShtolVA.Sprint7.Project.V2.Test
 {
@@ -8,9 +10,12 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void ValidGetDataFromFile()
+        public void ValidLoadFromDataFile()
         {
-            
+            string path = @"C:\Users\vikto\source\Kompanii.csv";
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            Assert.AreEqual(true, fileExists);
         }
     }
 }

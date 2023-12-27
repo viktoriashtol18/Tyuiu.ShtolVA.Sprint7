@@ -34,12 +34,10 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             FormGuide formGuide = new FormGuide();
             formGuide.ShowDialog();
         }
-
         private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
-
         private void buttonAddition_SVA_Click(object sender, EventArgs e)
         {
             try
@@ -57,16 +55,11 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             {
                 MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
         private void labelPoisk_SVA_Click(object sender, EventArgs e)
         {
 
         }
-
-
-
         private void buttonFile_SVA_Click(object sender, EventArgs e)
         {
             try
@@ -81,7 +74,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
                 dataGridViewOpenFile_SVA.Rows.Clear();
                 dataGridViewOpenFile_SVA.Columns.Clear();
                 dataGridViewOpenFile_SVA.RowCount = rows + 1;
-                dataGridViewOpenFile_SVA.ColumnCount = columns;
+                dataGridViewOpenFile_SVA.ColumnCount = columns + 1;
 
                 for (int i = 0; i < rows; i++)
                 {
@@ -101,9 +94,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
 
         }
         static string[,] mtrxSearch;
-
-
-
         private void buttonGraf_SVA_Click(object sender, EventArgs e)
         {
             FormCharts formCharts = new FormCharts();
@@ -113,22 +103,18 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
         {
             toolTipProjectV2_SVA.SetToolTip(buttonQuickGuide_SVA, "Открыть краткое руководство");
         }
-
         private void buttonProgramm_SVA_MouseEnter(object sender, EventArgs e)
         {
             toolTipProjectV2_SVA.SetToolTip(buttonProgramm_SVA, "Открыть  информацию о разработчике");
         }
-
         private void buttonGraF_SVA_MouseEnter(object sender, EventArgs e)
         {
             toolTipProjectV2_SVA.SetToolTip(buttonGraf_SVA, "Открыть графики");
         }
-
         private void buttonFile_SVA_MouseEnter(object sender, EventArgs e)
         {
             toolTipProjectV2_SVA.SetToolTip(buttonFile_SVA, "Открыть файл");
         }
-
         private void buttonDelete_SVA_Click(object sender, EventArgs e)
         {
             if (dataGridViewOpenFile_SVA.RowCount != 0)
@@ -183,17 +169,14 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             }
             else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void buttonSave_SVA_MouseEnter(object sender, EventArgs e)
         {
             toolTipProjectV2_SVA.SetToolTip(buttonSave_SVA, "Сохранить файл");
         }
-
         private void textBoxPoisk_SVA_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBoxPoisk_SVA_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -211,7 +194,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
                 }
             }
         }
-
         private void textBoxPoisk_SVA_KeyDown(object sender, KeyEventArgs e)
         {
             if (dataGridViewOpenFile_SVA.RowCount != 0)
@@ -225,7 +207,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
                         dataGridViewOpenFile_SVA.Rows[i].Cells[j].Selected = false;
                     }
                 }
-
                 textBoxKolvo_SVA.Text = "";
                 textBoxSum_SVA.Text = "";
                 textBoxAverage_SVA.Text = "";
@@ -268,7 +249,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             }
             else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void comboBoxSort_SVA_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxSort_SVA.SelectedItem != null && dataGridViewOpenFile_SVA.RowCount != 0)
@@ -316,7 +296,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
                             }
                             if (columnIndex > -1) break;
                         }
-
                         for (int i = 1; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
                         {
                             double cellValue;
@@ -325,7 +304,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
                                 dataGridViewOpenFile_SVA.Rows[i].Cells[columnIndex].Value = cellValue;
                             }
                         }
-
                         string selectedItem = comboBoxSort_SVA.SelectedItem.ToString();
                         if (selectedItem == "По возрастанию (от А до Я)" && poid != 0)
                         {
@@ -383,7 +361,6 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             }
             else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void buttonDeletSort_SVA_Click(object sender, EventArgs e)
         {
             if (dataGridViewOpenFile_SVA.RowCount != 0 && poid != 0)
@@ -418,40 +395,288 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             }
             else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
         private void textBoxKolvo_SVA_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBoxKolvo_SVA_KeyUp(object sender, KeyEventArgs e)
         {
             if (dataGridViewOpenFile_SVA.RowCount != 0)
             {
                 if (e.KeyCode == Keys.Enter)
                 {
-                    int nugno = -1;
+                    int nug = -1;
                     for (int i = 0; i < dataGridViewOpenFile_SVA.RowCount; i++)
                     {
                         for (int j = 0; j < dataGridViewOpenFile_SVA.ColumnCount - 1; j++)
                         {
                             if (dataGridViewOpenFile_SVA.Rows[i].Cells[j].Selected == true)
                             {
-                                nugno = j;
+                                nug = j;
                                 break;
                             }
-                            if (nugno > -1) break;
+                            if (nug > -1) break;
                         }
                     }
-
-                    if (nugno > -1)
+                    if (nug > -1)
                     {
                         int counter = 0;
                         for (int r = 0; r < dataGridViewOpenFile_SVA.RowCount; r++)
                         {
-                            if (dataGridViewOpenFile_SVA.Rows[r].Cells[nugno].Selected == true) counter++;
+                            if (dataGridViewOpenFile_SVA.Rows[r].Cells[nug].Selected == true) counter++;
                         }
                         textBoxKolvo_SVA.Text = Convert.ToString(counter);
+                    }
+                    else MessageBox.Show("Не выбран столбец", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void textBoxSum_SVA_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridViewOpenFile_SVA.RowCount != 0)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    int nug = -1;
+                    for (int i = 0; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                    {
+                        for (int j = 0; j < dataGridViewOpenFile_SVA.ColumnCount - 1; j++)
+                        {
+                            if (dataGridViewOpenFile_SVA.Rows[i].Cells[j].Selected == true)
+                            {
+                                nug = j;
+                                break;
+                            }
+                        }
+                        if (nug > -1) break;
+                    }
+                    if (nug > -1)
+                    {
+                        if (dataGridViewOpenFile_SVA.Rows[0].Cells[nug].Selected != true)
+                        {
+                            double sum = 0;
+                            for (int i = 1; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                            {
+                                if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Selected == true)
+                                {
+                                    double cellValue;
+                                    if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value != null && double.TryParse(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString(), out cellValue))
+                                    {
+                                        dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value = cellValue;
+                                        sum += Convert.ToDouble(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString());
+                                    }
+                                }
+                            }
+                            if (sum != 0) textBoxSum_SVA.Text = Convert.ToString(sum);
+                            else
+                            {
+                                MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                textBoxSum_SVA.Text = "";
+
+                                textBoxAverage_SVA.Text = "";
+                                textBoxMin_SVA.Text = "";
+                                textBoxMax_SVA.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBoxSum_SVA.Text = "";
+
+                            textBoxAverage_SVA.Text = "";
+                            textBoxMin_SVA.Text = "";
+                            textBoxMax_SVA.Text = "";
+                        }
+                    }
+                    else MessageBox.Show("Не выбран столбец", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void textBoxSum_SVA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBoxAverage_SVA_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridViewOpenFile_SVA.RowCount != 0)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    int nug = -1;
+                    for (int i = 0; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                    {
+                        for (int j = 0; j < dataGridViewOpenFile_SVA.ColumnCount - 1; j++)
+                        {
+                            if (dataGridViewOpenFile_SVA.Rows[i].Cells[j].Selected == true)
+                            {
+                                nug = j;
+                                break;
+                            }
+                        }
+                        if (nug > -1) break;
+                    }
+                    if (nug > -1)
+                    {
+                        if (dataGridViewOpenFile_SVA.Rows[0].Cells[nug].Selected != true)
+                        {
+                            double srznach = 0; int kol = 0;
+                            for (int i = 1; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                            {
+                                if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Selected == true)
+                                {
+                                    double cellValue;
+                                    if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value != null && double.TryParse(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString(), out cellValue))
+                                    {
+                                        dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value = cellValue;
+                                        srznach += Convert.ToDouble(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString());
+                                        kol++;
+                                    }
+                                }
+                            }
+                            if (srznach != 0) textBoxAverage_SVA.Text = Convert.ToString(Math.Round(srznach / kol, 5));
+                            else
+                            {
+                                MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                textBoxAverage_SVA.Text = "";
+                                textBoxSum_SVA.Text = "";
+                                textBoxMin_SVA.Text = "";
+                                textBoxMax_SVA.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBoxAverage_SVA.Text = "";
+                            textBoxSum_SVA.Text = "";
+                            textBoxMin_SVA.Text = "";
+                            textBoxMax_SVA.Text = "";
+                        }
+                    }
+                    else MessageBox.Show("Не выбран столбец", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void textBoxMin_SVA_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridViewOpenFile_SVA.RowCount != 0)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    int nug = -1;
+                    for (int i = 0; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                    {
+                        for (int j = 0; j < dataGridViewOpenFile_SVA.ColumnCount - 1; j++)
+                        {
+                            if (dataGridViewOpenFile_SVA.Rows[i].Cells[j].Selected == true)
+                            {
+                                nug = j;
+                                break;
+                            }
+                        }
+                        if (nug > -1) break;
+                    }
+                    if (nug > -1)
+                    {
+                        if (dataGridViewOpenFile_SVA.Rows[0].Cells[nug].Selected != true)
+                        {
+                            double min = 9999999;
+                            for (int i = 1; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                            {
+                                if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Selected == true)
+                                {
+                                    double cellValue;
+                                    if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value != null && double.TryParse(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString(), out cellValue))
+                                    {
+                                        dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value = cellValue;
+                                        min = Math.Min(Convert.ToDouble(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString()), min);
+                                    }
+                                }
+                            }
+                            if (min != 999999999999) textBoxMin_SVA.Text = Convert.ToString(min);
+                            else
+                            {
+                                MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                textBoxMin_SVA.Text = "";
+
+                                textBoxSum_SVA.Text = "";
+                                textBoxAverage_SVA.Text = "";
+                                textBoxMax_SVA.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBoxMin_SVA.Text = "";
+
+                            textBoxSum_SVA.Text = "";
+                            textBoxAverage_SVA.Text = "";
+                            textBoxMax_SVA.Text = "";
+                        }
+                    }
+                    else MessageBox.Show("Не выбран столбец", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void textBoxMax_SVA_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dataGridViewOpenFile_SVA.RowCount != 0)
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    int nug = -1;
+                    for (int i = 0; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                    {
+                        for (int j = 0; j < dataGridViewOpenFile_SVA.ColumnCount - 1; j++)
+                        {
+                            if (dataGridViewOpenFile_SVA.Rows[i].Cells[j].Selected == true)
+                            {
+                                nug = j;
+                                break;
+                            }
+                        }
+                        if (nug > -1) break;
+                    }
+                    if (nug > -1)
+                    {
+                        if (dataGridViewOpenFile_SVA.Rows[0].Cells[nug].Selected != true)
+                        {
+                            double max = -9999999;
+                            for (int i = 1; i < dataGridViewOpenFile_SVA.RowCount - 1; i++)
+                            {
+                                if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Selected == true)
+                                {
+                                    double cellValue;
+                                    if (dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value != null && double.TryParse(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString(), out cellValue))
+                                    {
+                                        dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value = cellValue;
+                                        max = Math.Max(Convert.ToDouble(dataGridViewOpenFile_SVA.Rows[i].Cells[nug].Value.ToString()), max);
+                                    }
+                                }
+                            }
+                            if (max != -99999999999) textBoxMax_SVA.Text = Convert.ToString(max);
+                            else
+                            {
+                                MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                textBoxMax_SVA.Text = "";
+
+                                textBoxSum_SVA.Text = "";
+                                textBoxAverage_SVA.Text = "";
+                                textBoxMin_SVA.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Пожалуйста, выберите диапозон ячеек с числами", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBoxMax_SVA.Text = "";
+
+                            textBoxSum_SVA.Text = "";
+                            textBoxAverage_SVA.Text = "";
+                            textBoxMin_SVA.Text = "";
+                        }
                     }
                     else MessageBox.Show("Не выбран столбец", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

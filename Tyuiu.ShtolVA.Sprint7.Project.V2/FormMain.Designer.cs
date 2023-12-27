@@ -327,6 +327,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.textBoxMax_SVA.Name = "textBoxMax_SVA";
             this.textBoxMax_SVA.Size = new System.Drawing.Size(100, 22);
             this.textBoxMax_SVA.TabIndex = 9;
+            this.textBoxMax_SVA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMax_SVA_KeyUp);
             // 
             // textBoxMin_SVA
             // 
@@ -334,6 +335,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.textBoxMin_SVA.Name = "textBoxMin_SVA";
             this.textBoxMin_SVA.Size = new System.Drawing.Size(100, 22);
             this.textBoxMin_SVA.TabIndex = 8;
+            this.textBoxMin_SVA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMin_SVA_KeyUp);
             // 
             // textBoxAverage_SVA
             // 
@@ -341,6 +343,7 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.textBoxAverage_SVA.Name = "textBoxAverage_SVA";
             this.textBoxAverage_SVA.Size = new System.Drawing.Size(100, 22);
             this.textBoxAverage_SVA.TabIndex = 7;
+            this.textBoxAverage_SVA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxAverage_SVA_KeyUp);
             // 
             // textBoxSum_SVA
             // 
@@ -349,6 +352,8 @@ namespace Tyuiu.ShtolVA.Sprint7.Project.V2
             this.textBoxSum_SVA.Name = "textBoxSum_SVA";
             this.textBoxSum_SVA.Size = new System.Drawing.Size(94, 22);
             this.textBoxSum_SVA.TabIndex = 6;
+            this.textBoxSum_SVA.TextChanged += new System.EventHandler(this.textBoxSum_SVA_TextChanged);
+            this.textBoxSum_SVA.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxSum_SVA_KeyUp);
             // 
             // textBoxKolvo_SVA
             // 
